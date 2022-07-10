@@ -11,7 +11,7 @@ on:
       - dev
 defaults:
   run:
-    working-directory: backend
+    working-directory: backend/demo
 
 jobs:
   build:
@@ -28,6 +28,8 @@ jobs:
   
       - name: grant execute permission for gradlew
         run: chmod +x gradlew
+        working-directory: backend/demo
       
       - name: gradle build
         run: ./gradlew build
+        working-directory: backend/demo
