@@ -3,10 +3,10 @@ name: backend
 on:
   push:
     paths:
-      - 'backend/demo/**'
+      - 'backend/**'
   pull_request:
     paths:
-      - 'backend/demo/**'
+      - 'backend/**'
     branches:
       - dev
 defaults:
@@ -27,9 +27,9 @@ jobs:
           distribution: 'temurin'
   
       - name: grant execute permission for gradlew
-        run:
-        chmod +x gradlew
+        run: chmod +x gradlew
+        working-directory: backend/demo
       
       - name: gradle build
-        run:
-        ./gradlew build
+        run: ./gradlew build
+        working-directory: backend/demo
