@@ -4,12 +4,11 @@ on:
   push:
     paths:
       - 'backend/**'
-    branches:
-      - dev
   pull_request:
     paths:
       - 'backend/**'
-
+    branches:
+      - dev
 defaults:
   run:
     working-directory: backend
