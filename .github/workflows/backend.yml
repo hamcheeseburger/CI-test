@@ -28,10 +28,10 @@ jobs:
   
       - name: grant execute permission for gradlew
         run:
-        cd backend/demo
+        cd demo
         chmod +x gradlew
       
       - name: gradle build
         run:
-        cd backend/demo
+        cd demo
         ./gradlew build
