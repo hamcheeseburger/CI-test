@@ -27,7 +27,11 @@ jobs:
           distribution: 'temurin'
   
       - name: grant execute permission for gradlew
-        run: chmod +x gradlew
+        run:
+        cd backend
+        chmod +x gradlew
       
       - name: gradle build
-        run: ./gradlew build
+        run:
+        cd backend
+        ./gradlew build
