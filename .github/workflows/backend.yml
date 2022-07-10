@@ -1,0 +1,34 @@
+name: backend
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+    branches:
+      - dev
+  pull_request:
+    paths:
+      - 'backend/**'
+
+defaults:
+  run:
+    working-directory: backend
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+  
+      - name: grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: gradle build
+        run: ./gradlew build
