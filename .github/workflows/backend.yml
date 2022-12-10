@@ -2,16 +2,8 @@ name: backend
 
 on:
   push:
-    paths:
-      - 'backend/**'
-  pull_request:
-    paths:
-      - 'backend/**'
     branches:
       - dev
-defaults:
-  run:
-    working-directory: backend/demo
 
 jobs:
   build:
