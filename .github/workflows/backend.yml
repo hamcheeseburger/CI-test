@@ -8,7 +8,7 @@ on:
     paths:
       - 'backend/**'
     branches:
-      - dev
+      - main
 defaults:
   run:
     working-directory: backend/demo
