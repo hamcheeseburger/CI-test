@@ -48,3 +48,9 @@ jobs:
             './build/libs/*.jar' => /home/ubuntu
           last_ssh: |
             nohup java -jar *.jar &
+            
+      - name: add comments to a pull request
+        uses: mikepenz/action-junit-report@v3
+        if: always()
+        with:
+          report_paths: backend/demo/build/test-results/test/TEST-*.xml
